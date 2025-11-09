@@ -9,7 +9,7 @@ router.use(cookieParser());
 
 router.post("/", async (req, res) => {
     const {email, password, stay} = req.body;
-    const verification = await checkUsers(email, password);
+    const verification = await checkUsers(email.toLowerCase(), password);
     if (verification.status && stay) {
             const jwt_token = jwt.sign(
                 {id: verification.id, email: email},
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
     const {name, email, password} = req.body;
-    const createdUser = await addUser(name, email, password);
+    const createdUser = await addUser(name, email.toLowerCase(), password);
     res.json(createdUser);
 })
 
