@@ -1,6 +1,7 @@
 import type {LoginCreate, LoginCreateErrors} from '../../interfaces/LoginInterface.tsx'
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
+import '../../styling/LoginStyle.css'
 
 const CreateLogin = ({base}: {base: string}) => {
     const [formData, setFormData] = useState<LoginCreate>({name: "", email: "", password: ""});
@@ -83,7 +84,7 @@ const CreateLogin = ({base}: {base: string}) => {
                         <input name = "password" type = "password" className = "form-control" id = "Password" placeholder = "Password" onChange = {handleInputChange}/>
                         {formErrors.password && <p className = "text-danger">{formErrors.password}</p>}
                     </div>
-                    <button type = "submit" className = "btn btn-primary">Sign in</button>
+                    <button type = "submit" className = "btn btn-primary">Create Account</button>
                 </form>
                 <hr/>
                 <Link to = "/">Go back to Login</Link>

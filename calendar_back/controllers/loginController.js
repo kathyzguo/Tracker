@@ -6,8 +6,8 @@ async function checkUsers(em, pw) {
         connectionString: process.env.DBURL
     });
     try {
-        const result = await pool.query("SELECT * FROM users");
-        const rightUser = result.rows.find(user => user.email.toUpperCase() === em.toUpperCase());
+        const result = await pool.query("SELECT * FROM users WHERE UPPER(email) = UPPER($1)", [em]);
+        const rightUser = result.rows[0];
         if (rightUser) {
             const rightPassword = await bcrypt.compare(pw, rightUser.password);
             return (rightPassword) ? {status: true, id: rightUser.id, message: "Success"} : 
@@ -29,7 +29,7 @@ async function addUser(nm, em, pw) {
     })
     try {
         const hashed = await bcrypt.hash(pw, 10);
-        const result = await pool.query("SELECT 1 FROM users WHERE email = $1", [em]);
+        const result = await pool.query("SELECT 1 FROM users WHERE UPPER(email) = UPPER($1)", [em]);
         if (!result.rows[0]) {
             const user = await pool.query(`INSERT INTO users (name, password, email) VALUES ($1, $2, $3)
                 RETURNING id, email, password`, [nm, hashed, em]);

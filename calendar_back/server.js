@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const loginRouter = require("./routers/loginRouter");
+const mainRouter = require("./routers/mainRouter");
 require("dotenv").config();
 
 const server = express();
@@ -11,6 +12,7 @@ server.use(cors({
     credentials: true
 }));
 server.use("/api/login", loginRouter);
+server.use("/api/main", mainRouter)
 
 server.listen(3000, () => {
     console.log("Server started!");

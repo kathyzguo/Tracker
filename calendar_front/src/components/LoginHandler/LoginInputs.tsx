@@ -1,11 +1,13 @@
 import type {LoginData, LoginErrors} from "../../interfaces/LoginInterface.tsx"
 import {useState, useEffect} from "react"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import '../../styling/LoginStyle.css'
 
-const LoginInputs = ({base}: {base: string}) => {
+const LoginInputs = ({base, setID}: {base: string, setID: (userID: number) => void}) => {
     const [formData, setFormData] = useState<LoginData>({email: "", password: "", stay: false});
     const [formErrors, setFormErrors] = useState<LoginErrors>({});
     const [success, setSuccess] = useState("");
+    const navigate = useNavigate()
 
     const checkLoginB = (email: string, password: string) => {
         const newErrors: LoginErrors = {};
@@ -55,7 +57,10 @@ const LoginInputs = ({base}: {base: string}) => {
                 const results = await response.json();
                 if (response.ok) {
                     setSuccess(results.message);
-                    console.log(results);
+                    if (results.status) {
+                        setID(results.id)
+                        navigate("/home")
+                    }
                 }
             }
             catch (err) {
@@ -71,8 +76,9 @@ const LoginInputs = ({base}: {base: string}) => {
                     credentials: "include"
                 });
                 const results = await response.json();
-                if (response.ok) {
-                    console.log(results);
+                if (response.ok && results.status) {
+                    setID(results.id)
+                    navigate("/home")
                 }
             }
             catch (err) {
@@ -86,7 +92,7 @@ const LoginInputs = ({base}: {base: string}) => {
     <>
         <div style = {{minHeight: "100vh", minWidth: "100vw", display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "#9A6FFF"}}>
             <div className = "border border-5 rounded-3" style = {{width: "470px", padding: "20px", backgroundColor: "white"}}>
-                <h2>Calendie</h2>
+                <h2>Trackie</h2>
                 {success.length > 1 && <h6 style = {{color: "#4400FF"}}>{success}</h6>}
                 <form className = "px-4 py-3" noValidate onSubmit = {handleFormSubmission}>
                     <div className = "mb-3">
