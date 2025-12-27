@@ -1,6 +1,6 @@
 ABOUT 5% DONE
-Created basic login interface without CSS 
+Changed from being a calendar to being a tracker for personal use
 Undeployed server for database
 Undeployed application
 
-Basic calendar app to keep track of items! Customizable for each indiviudal
+Basic calendar app to keep track of items!
