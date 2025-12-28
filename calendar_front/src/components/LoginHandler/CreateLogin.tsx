@@ -1,7 +1,6 @@
 import type {LoginCreate, LoginCreateErrors} from '../../interfaces/LoginInterface.tsx'
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
-import '../../styling/LoginStyle.css'
 
 const CreateLogin = ({base}: {base: string}) => {
     const [formData, setFormData] = useState<LoginCreate>({name: "", email: "", password: ""});

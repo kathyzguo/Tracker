@@ -1,7 +1,6 @@
 import type {LoginData, LoginErrors} from "../../interfaces/LoginInterface.tsx"
 import {useState, useEffect} from "react"
 import {Link, useNavigate} from 'react-router-dom'
-import '../../styling/LoginStyle.css'
 
 const LoginInputs = ({base, setID}: {base: string, setID: (userID: number) => void}) => {
     const [formData, setFormData] = useState<LoginData>({email: "", password: "", stay: false});
