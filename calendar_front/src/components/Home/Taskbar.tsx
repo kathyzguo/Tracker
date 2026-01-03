@@ -1,22 +1,32 @@
+import {Link} from 'react-router-dom'
 
-
-const Taskbar = (() => {
+const Taskbar = (({type} : {type: number}) => {
     return (
         <div className = "taskbar">
             <div>
-                <button>Home</button>
+                <button className = {`taskButton ${type === 0 ? "activeTaskButton" : ""}`}>
+                    <Link to = "/home">Home</Link>
+                </button>
             </div>
             <div>
-                <button>Calendars</button>
+                <button className = {`taskButton ${type === 1 ? "activeTaskButton" : ""}`}>
+                    <Link to = "/calendars">Calendars</Link>
+                </button>
             </div>
             <div>
-                <button>Goals</button>
+                <button className = {`taskButton ${type === 2 ? "activeTaskButton" : ""}`}>
+                    <Link to = "/goals">Goals</Link>
+                </button>
             </div>
             <div>
-                <button>Time Tracker</button>
+                <button className = {`taskButton ${type === 3 ? "activeTaskButton" : ""}`}>
+                    <Link to = "/time_tracker">Time Tracker</Link>
+                </button>
             </div>
             <div>
-                <button>Custom Trackers</button>
+                <button className = {`taskButton ${type === 4 ? "activeTaskButton" : ""}`}>
+                    <Link to = "/custom_trackers">Custom Trackers</Link>
+                </button>
             </div>
         </div>
     )

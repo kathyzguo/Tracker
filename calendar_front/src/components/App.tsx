@@ -16,10 +16,10 @@ function App({apiBase}: {apiBase: string}) {
             <Route path = "/" element = {<LoginInputs base = {apiBase} setID = {setUserID}/>}/>
             <Route path = "/create" element = {<CreateLogin base = {apiBase}/>}/>
             <Route path = "/home" element = {<MainPage base = {apiBase} userID = {userID}/>}/>
-            <Route path = "/calendars" element = {<Calendars base = {apiBase}/>}/>
-            <Route path = "/goals" element = {<Goals base = {apiBase}/>}/>
-            <Route path = "/time_tracker" element = {<TTracker base = {apiBase}/>}/>
-            <Route path = "/custom_trackers" element = {<CTrackers base = {apiBase}/>}/>
+            <Route path = "/calendars" element = {<Calendars base = {apiBase} userID = {userID}/>}/>
+            <Route path = "/goals" element = {<Goals base = {apiBase} userID = {userID}/>}/>
+            <Route path = "/time_tracker" element = {<TTracker base = {apiBase} userID = {userID}/>}/>
+            <Route path = "/custom_trackers" element = {<CTrackers base = {apiBase} userID = {userID}/>}/>
         </Routes>
     </BrowserRouter>
     )

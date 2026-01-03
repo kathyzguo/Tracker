@@ -7,7 +7,7 @@ const {addUser, checkUsers} = require("../controllers/loginController");
 router.use(express.json());
 router.use(cookieParser());
 
-router.post("/", async (req, res) => {
+router.post("/tryLogin", async (req, res) => {
     const {email, password, stay} = req.body;
     const verification = await checkUsers(email.toLowerCase(), password);
     if (verification.status && stay) {

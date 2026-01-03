@@ -47,7 +47,7 @@ const LoginInputs = ({base, setID}: {base: string, setID: (userID: number) => vo
         if (Object.keys(errors).length > 0) {}
         else {
             try {
-                const response = await fetch(`${base}/login`, {
+                const response = await fetch(`${base}/login/tryLogin`, {
                     method: "POST",
                     headers: {"Content-Type": "application/json"},
                     credentials: "include",

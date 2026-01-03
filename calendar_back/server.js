@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const loginRouter = require("./routers/loginRouter");
 const mainRouter = require("./routers/mainRouter");
+const calendarRouter = require("./routers/calendarRouter");
 require("dotenv").config();
 
 const server = express();
@@ -13,6 +14,7 @@ server.use(cors({
 }));
 server.use("/api/login", loginRouter);
 server.use("/api/main", mainRouter)
+server.use("/api/calendar", calendarRouter);
 
 server.listen(3000, () => {
     console.log("Server started!");
