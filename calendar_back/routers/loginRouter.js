@@ -23,13 +23,13 @@ router.post("/tryLogin", async (req, res) => {
             res.cookie("authToken", jwt_token, cookieOptions);
         }
     res.json(verification);
-    })
+});
 
 router.post("/create", async (req, res) => {
     const {name, email, password} = req.body;
     const createdUser = await addUser(name, email.toLowerCase(), password);
     res.json(createdUser);
-})
+});
 
 router.get("/authToken", (req, res) => {
     const token = req.cookies.authToken;
@@ -45,6 +45,6 @@ router.get("/authToken", (req, res) => {
     else {
         res.status(401).json({message: "No Token Provided"});
     }
-})
+});
 
 module.exports = router;

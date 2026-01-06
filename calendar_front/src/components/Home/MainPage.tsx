@@ -42,50 +42,50 @@ const MainPage = ({base, userID}: {base: String, userID: number}) => {
             </div>
             <div className = "mainFlowBlock">
                 <div className = "mainBlock" style = 
-                {{backgroundColor: "#D28FFF", borderColor: "#AA2BFF"}}>
+                {{backgroundColor: "#D28FFF", borderColor: "#8923cdff"}}>
                     <div className = "mainBlockTitle" style = 
                     {{backgroundImage: "linear-gradient(to bottom, #CD81FF, #BB61F7)", borderColor: "#AA2BFF"}}>
                         <h2>Calendars</h2>
                     </div>
                     <div className = "mainBlockListing">
                         <div className = "mainNewStart">
-                            <h3>Start new calendar ✚</h3>
+                            <h3>Start new calendar</h3>
                         </div>
                     </div>
                 </div>
                 <div className = "mainBlock" style = 
-                {{backgroundColor: "#94A1FF", borderColor: "#3B52FF"}}>
+                {{backgroundColor: "#94A1FF", borderColor: "#2c3ec4ff"}}>
                     <div className = "mainBlockTitle" style = 
                     {{backgroundImage: "linear-gradient(to bottom, #6B7CFF, #4F64FF)", borderColor: "#3B52FF"}}>
                         <h2>Goals</h2>
                     </div>
                     <div className = "mainBlockListing">
                         <div className = "mainNewStart">
-                            <h3>Log new goal ✚</h3>
+                            <h3>Log new goal</h3>
                         </div>
                     </div>
                 </div>
                 <div className = "mainBlock" style = 
-                {{backgroundColor: "#7DC4FF", borderColor: "#1794FF"}}>
+                {{backgroundColor: "#7DC4FF", borderColor: "#1478d0ff"}}>
                     <div className = "mainBlockTitle" style = 
                     {{backgroundImage: "linear-gradient(to bottom, #6EB7FF, #42A6FF)", borderColor: "#1794FF"}}>
                         <h2>Time Tracker</h2>
                     </div>
                     <div className = "mainBlockListing">
                         <div className = "mainNewStart">
-                            <h3>Log time spent ✚</h3>
+                            <h3>Log time spent</h3>
                         </div>
                     </div>
                 </div>
                 <div className = "mainBlock" style = 
-                {{backgroundColor: "#6CF9DF", borderColor: "#20D4AC"}}>
+                {{backgroundColor: "#6CF9DF", borderColor: "#1aad8eff"}}>
                     <div className = "mainBlockTitle" style = 
                     {{backgroundImage: "linear-gradient(to bottom, #68EDCD, #3FE0BA)", borderColor: "#20D4AC"}}>
                         <h2>Custom Trackers</h2>
                     </div>
                     <div className = "mainBlockListing">
                         <div className = "mainNewStart">
-                            <h3>Create new tracker ✚</h3>
+                            <h3>Create new tracker</h3>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const loginRouter = require("./routers/loginRouter");
 const mainRouter = require("./routers/mainRouter");
 const calendarRouter = require("./routers/calendarRouter");
-require("dotenv").config();
 
 const server = express();
 

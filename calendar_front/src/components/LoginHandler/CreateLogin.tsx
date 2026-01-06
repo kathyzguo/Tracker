@@ -52,7 +52,6 @@ const CreateLogin = ({base}: {base: string}) => {
                 const results = await response.json();
                 if (response.ok) {
                     setSuccess(results.message);
-                    console.log(results);
                 }
             }
             catch (err) {
