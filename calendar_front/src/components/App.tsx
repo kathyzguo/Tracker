@@ -9,7 +9,7 @@ import TTracker from './Home/TTracker.tsx'
 import CTrackers from './Home/CTrackers.tsx'
 
 function App({apiBase}: {apiBase: string}) {
-    const [userID, setUserID] = useState(-1)
+    const [userID, setUserID] = useState<number>(-1)
     return (
     <BrowserRouter>
         <Routes>
