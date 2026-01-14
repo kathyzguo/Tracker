@@ -2,7 +2,7 @@ import {useState, useEffect} from "react"
 import {useNavigate} from 'react-router-dom'
 import Taskbar from "./Taskbar"
 
-const MainPage = ({base, userID}: {base: String, userID: number}) => {
+const MainPage = ({base, userID}: {base: string, userID: number}) => {
     const navigate = useNavigate();
     const [displayName, setDisplayName] = useState("");
 

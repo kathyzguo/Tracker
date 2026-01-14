@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 const Taskbar = (({type} : {type: number}) => {
     return (
-        <div className = "taskbar">
+        <nav className = "taskbar">
             <div>
                 <button className = {`taskButton ${type === 0 ? "activeTaskButton" : ""}`}>
                     <Link to = "/home">Home</Link>
@@ -28,7 +28,7 @@ const Taskbar = (({type} : {type: number}) => {
                     <Link to = "/custom_trackers">Custom Trackers</Link>
                 </button>
             </div>
-        </div>
+        </nav>
     )
 });
 

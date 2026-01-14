@@ -1,9 +1,3 @@
-export interface Calendar {
-    name: string,
-    description: string,
-    events: Event[]
-}
-
 export interface CalendarListed {
     calendar_id: number,
     name: string,
@@ -13,6 +7,7 @@ export interface CalendarListed {
 }
 
 export interface Event {
+    event_id: number,
     calendar_id: number,
     name: string,
     description: string,
@@ -22,7 +17,6 @@ export interface Event {
     recurrence: string,
     recurrence_start?: Date
     recurrence_end?: Date 
-
 }
 
 export interface EventJSON {

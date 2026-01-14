@@ -66,9 +66,9 @@ async function createEvent(calendar_id, name, description, start_time, end_time,
             recurrence_end = (recurrence_end === undefined) ? "" : recurrence_end;
             const create = await pool.query(`INSERT INTO calendar_events (calendar_id, name, description, start_time,
             end_time, all_day, recurrence, recurrence_start, recurrence_end) 
-            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`, [calendar_id, name, description, start_time, end_time, all_day,
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id`, [calendar_id, name, description, start_time, end_time, all_day,
                 recurrence, recurrence_start, recurrence_end]);
-            return {status: true, message: "Event successfully created"};
+            return {status: true, message: "Event successfully created", event_id: create.rows[0].id};
         }
     }
     catch (err) {

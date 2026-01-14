@@ -3,7 +3,7 @@ import {useState} from "react"
 import LoginInputs from './LoginHandler/LoginInputs.tsx'
 import CreateLogin from './LoginHandler/CreateLogin.tsx'
 import MainPage from './Home/MainPage.tsx'
-import Calendars from './Home/Calendars.tsx'
+import Calendars from './Calendar/Calendars.tsx'
 import Goals from './Home/Goals.tsx'
 import TTracker from './Home/TTracker.tsx'
 import CTrackers from './Home/CTrackers.tsx'

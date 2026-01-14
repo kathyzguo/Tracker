@@ -1,0 +1,142 @@
+.forNav {
+    display: flex;
+}
+
+.leftnav {
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    width: 175px;
+    border-right: solid 4px #8f8f8f;
+}
+
+.leftnav > h2 {
+    width: 100%;
+    padding: 7px 10px;
+    margin-bottom: 5px;
+    border-bottom: solid 3px #adadad;
+    background-color: #e6e6e6;
+    font-size: 22px;
+}
+
+.leftnav > label {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-bottom: solid 2px #c9c9c9;
+}
+
+.leftnav > label > input {
+    transform: scale(1.3);
+    margin: 8px;
+}
+
+.calendarFrame {
+    box-sizing: border-box;
+    position: relative;
+    width: 90%;
+    clear: both;
+    border-image: linear-gradient(#ffa2ff, #ff00ff) 1;
+    border-width: 7px;
+    border-style: ridge;
+    margin: 33px;
+    display: grid;
+    aspect-ratio: 1.217;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 6fr 3fr repeat(5, 12fr);
+}
+
+.calendarFrame > h2 {
+    box-sizing: border-box;
+    border-bottom: solid 4px #ffa8ff;
+    grid-column: 1 / span 7;
+    background-color: #ffbeff;
+    margin: 0;
+    padding: 0;
+    font-size: 3vw;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+#calLeftArrow {
+    position: absolute;
+    top: 0;
+    left: 1.5vw;
+    height: 5vw;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+#calRightArrow {
+    position: absolute;
+    top: 0;
+    right: 1.5vw;
+    height: 5vw;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.calendarFrame > h3 {
+    box-sizing: border-box;
+    background-color: #fc9dfc;
+    border-bottom: solid 4px #ff94ff;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2vw;
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendarFrame > div {
+    border-top: dashed #ffd5fb 3px;
+    border-left: dashed #ffd5fb 3px;
+    overflow: auto;
+    content: "";
+}
+
+.calendarFrame > div > h4 {
+    font-size: 1.2vw;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.6vw;
+    color:#a281f0;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+}
+
+.calendarFrame > div > button {
+    font-size: 0.85vw;
+    margin: 0.8vw;
+    padding: 0.4vw;
+    color: #ffffff;
+    border-radius: 0.1vw;
+    border: 0px;
+    background-color: #a281f0;
+    box-shadow: 0.3vw 0.3vw 0 #885af4, -0.3vw -0.3vw 0 #c7b0fe;;
+    display: flex;
+}
+
+.calendar ::-webkit-scrollbar {
+    width: 0.3vw;
+    height: 0.3vw;
+}
+
+.calendar ::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+
+.calendar ::-webkit-scrollbar-thumb {
+  background: #ffc9fa;
+  box-shadow: inset 0 0 0.3vw #ffc8f9; 
+  border-radius: 1vw;
+}
+
+.calendar ::-webkit-scrollbar-thumb:hover {
+  background: #ffb3f7; 
+}

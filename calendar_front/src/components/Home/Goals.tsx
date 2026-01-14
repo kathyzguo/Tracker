@@ -2,7 +2,7 @@ import {useEffect} from "react"
 import {useNavigate} from 'react-router-dom'
 import Taskbar from "./Taskbar"
 
-const Goals = ({base, userID} : {base: String, userID: number}) => {
+const Goals = ({base, userID} : {base: string, userID: number}) => {
     const navigate = useNavigate();
     
     useEffect(() => {
